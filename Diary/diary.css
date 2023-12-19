@@ -1,0 +1,31 @@
+*{
+    text-align: center;
+    background: border-box;
+}
+img{
+    width: 400px;
+    height: 320px;
+    border-radius: 150px;
+}
+body{
+    width: 800px;
+    margin: auto; 
+}
+
+html{
+    background-color: #f3d9f5;
+    font-size: 16px;
+}
+
+
+
+h1{
+    background: border-box ;
+    font-size: 48px;
+}
+
+
+
+p{
+    font-size: 1.5rem;
+}

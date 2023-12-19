@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="author" content="정서우">
+    <meta name="description" content="Practice Page">
+    <meta name="keywords" content="Study, HTML, Practice">
+    <title>정서우 일기장</title>
+    <link rel="stylesheet" href="diary.css"> 
+</head>
+<body>
+   
+    <div class="diary-container">
+    <fieldset>   
+    
+        <h1 class="diary-title">☀️ 나만의 일기장 ☀️</h1>
+    </fieldset> 
+        
+        <table class="diary-input">
+            <tr>
+                
+                <td><input type="date" id="diaryDate"></td>
+            </tr>
+            <fieldset>
+              <tr>
+               
+                <td>
+                    <label><input type="radio" value="sunny">Sunny</label>
+                    <label><input type="radio" value="cloudy"> Cloudy</label>
+                    <label><input type="radio" value="rainy">Rainy</label>
+                </td>
+                <tr>
+                    
+                    <td>
+                        <input type="range" id="emotionLevel" min="1" max="10" value="5">
+                        <span id="emotionValue">10</span>
+                    </td>
+                </tr>
+        
+                    <td><img src="a1.jpg" alt="Diary Image"></td>
+                
+              </tr>
+            
+                
+              <tr>
+                <div id="dtext">
+                    <p class="text contents"><strong><u>오늘의</u></strong>일기  <br>
+                    오늘은 무슨 일이 었었습니까?<br>
+                    </p>
+                </div>
+
+                <tr>
+                
+                 <td><textarea id="diaryText" rows="10" cols="90" placeholder="Write your diary here..."></textarea></td>
+                </tr>
+              </tr>
+        </table>
+    </div>
+</body>
+</html>
