@@ -13,16 +13,13 @@ body {
     background-color: rgb(117, 204, 231);
 }
 
-.top_section {
-    padding-top: 150px;
+.l-top {
+    padding-top: 250px;
 }
 .bottom {
-    padding-bottom: 150px;
+    padding-bottom: 200px;
 }
 
-
-/* .snow-man_hat {
-} */
 .upside_hat {
     width: 53px;
     height: 45px;
@@ -100,7 +97,6 @@ body {
     transform: rotate(45deg);
     background-color: rgb(69, 30, 30);
     position: relative;
-    justify-items: baseline;
     right: 700px;
     bottom: 50px;
 }
