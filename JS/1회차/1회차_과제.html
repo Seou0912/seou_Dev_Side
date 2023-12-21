@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1회차 과제 사용자 정보입력</title>
+    <style>
+      body {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="name"></h1>
+    <p id="Pet"></p>
+    <p id="fr"></p>
+
+    <script>
+      const nameElement = document.querySelector("#name");
+      let name = prompt("당신의 이름은 ?");
+      nameElement.textContent = name;
+
+      const PetElement = document.querySelector("#Pet");
+      let Pet = prompt("당신의 좋아하는 동물은 ?");
+      PetElement.textContent = `좋아하는 동물은 ${Pet}입니다.`;
+
+      const frElement = document.querySelector("#fr");
+      let fr = prompt("당신의 좋아하는 과일은 무엇입니까 ?");
+      frElement.textContent = `좋아하는 과일은 ${fr}입니다.`;
+    </script>
+  </body>
+</html>

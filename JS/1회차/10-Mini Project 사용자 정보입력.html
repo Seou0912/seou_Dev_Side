@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Project 사용자 정보입력</title>
+    <style>
+      body {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+      #hobby {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="name"></h1>
+    <p id="hobby"></p>
+    <p id="song"></p>
+
+    <script>
+      const nameElement = document.querySelector("#name");
+      let name = prompt("당신의 이름은 ?");
+      nameElement.textContent = name;
+
+      const hobbyElement = document.querySelector("#hobby");
+      let hobby = prompt("당신의 취미는 무엇입니까 ?");
+      hobbyElement.textContent = `취미는 ${hobby}입니다.`;
+
+      const songElement = document.querySelector("#song");
+      let song = prompt("당신이 좋아하는 노래는?");
+      songElement.textContent = `좋아하는 노래는 ${song}입니다.`;
+      // .textContent = `좋아하는 곡은 ${prompt("좋아하는 곡은?")}입니다!`
+      // 한줄로 쓸 수 있다.
+    </script>
+  </body>
+</html>
