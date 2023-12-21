@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>다크모드</title>
+    <style>
+      body {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <button onmouseover="changeColor('white')">White</button>
+      <button onmouseover="changeColor('black')">Black</button>
+    </div>
+
+    <script>
+      function changeColor(color) {
+        document.body.style.backgroundColor = color;
+      }
+    </script>
+  </body>
+</html>
