@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>다크모드</title>
+    <style>
+      body {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: rgb(239, 227, 241);
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      // 1번 별
+      for (let i = 1; i <= 5; i++) {
+        let stars = "";
+        for (let j = 1; j <= i; j++) {
+          stars += "*";
+        }
+        console.log(stars);
+        document.write(stars + "<br>");
+      }
+      console.log(""); // 한 줄 띄우기
+      document.write("<br>"); // 한 줄 띄우기
+
+      // 2번 별
+      for (let i = 5; i >= 1; i--) {
+        let stars = "";
+        for (let j = 1; j <= i; j++) {
+          stars += "*";
+        }
+        console.log(stars);
+        document.write(stars + "<br>");
+      }
+      console.log(""); // 한 줄 띄우기
+      document.write("<br>"); // 한 줄 띄우기
+
+      // 3번 별
+      for (let i = 1; i <= 5; i++) {
+        let spaces = "";
+        let stars = "";
+        for (let j = 1; j <= 5 - i; j++) {
+          spaces += " ";
+        }
+        for (let k = 1; k <= i; k++) {
+          stars += "*";
+        }
+        console.log(spaces + stars);
+        document.write(spaces + stars + "<br>");
+      }
+
+      for (let i = 4; i >= 1; i--) {
+        let spaces = "";
+        let stars = "";
+        for (let j = 1; j <= 5 - i; j++) {
+          spaces += " ";
+        }
+        for (let k = 1; k <= i; k++) {
+          stars += "*";
+        }
+        console.log(spaces + stars);
+        document.write(spaces + stars + "<br>");
+      }
+    </script>
+  </body>
+</html>
