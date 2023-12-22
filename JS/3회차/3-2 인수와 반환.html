@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>인수와 반환</title>
+    <style>
+      body {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container"></div>
+
+    <script>
+      console.log(abcd("첫번째 문다, 와우!", "red"));
+      console.log(abcd("두 번째 문단도 여기에 있어!", "green"));
+      console.log(abcd("세 번째도 잊지 말라구", "blue"));
+
+      function abcd(content, color) {
+        const p = document.createElement("p");
+        p.style.color = color;
+        p.textContent = content;
+        document.querySelector("#container").append(p);
+
+        return `방금 만든 태그의 콘텐츠: ${content}, 색상:${color}`;
+      }
+
+      /*abcd("첫번째 문다, 와우!", "red");
+      abcd("두 번째 문단도 여기에 있어!", "green");
+      abcd("세 번째도 잊지 말라구", "blue");
+
+      function abcd(content, color) {
+        const p = document.createElement("p");
+        p.style.color = color;
+        p.textContent = content;
+        document.querySelector("#container").append(p);
+      }
+      */
+      function sample() {
+        console.log("반환기능 테스트");
+
+        return "짜자잔";
+      }
+      console.log(sample());
+      //호이스팅 가능 : 함수 만드는 부분이 호출하는 부분보다 아래에 있어도 된다
+      //sayyes()
+
+      // 호이스팅 불가
+      //sayno()
+      //함수 이름짓기 규칙은 변수와 같다
+      //기능을 정의하는 만큼, 동사를 사용하는 것이 좋다
+      function sayyes() {
+        console.log(1);
+        console.log(2);
+        alert("yes");
+      }
+
+      const sayno = function () {
+        alert("no!");
+        console.log(3);
+      };
+    </script>
+  </body>
+</html>
