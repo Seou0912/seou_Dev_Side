@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>몬스터잡기게임</title>
+    <style>
+      body {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Monster Slayer</h1>
+    <div id="monster"></div>
+    <div id="actions">
+      <button onclick="attack()">공격!</button>
+    </div>
+    <div id="energy">에너지: 100</div>
+
+    <script>
+      var monsterHealth = 100;
+      var energy = 100;
+
+      function attack() {
+        var damage = Math.floor(Math.random() * 10) + 1;
+        monsterHealth -= damage;
+        energy -= 10;
+
+        if (monsterHealth > 0) {
+          document.getElementById("monster").style.width = monsterHealth + "px";
+        } else {
+          document.getElementById("monster").style.display = "none";
+          document.getElementById("actions").innerHTML =
+            "<h2>몬스터를 물리쳤습니다!</h2>";
+        }
+
+        document.getElementById("energy").innerHTML = "에너지: " + energy;
+      } // 공격 버튼을 클릭하면 몬스터의 체력이 감소하고, 체력이 0 이하로 떨어지면 "몬스터를 물리쳤습니다!"라는 메시지가 표시됩니다.
+    </script>
+  </body>
+</html>
