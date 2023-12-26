@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실시간 카운드다운</title>
+    <style>
+      body {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+      .current-time {
+        font-size: 24px;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="current-time" id="current-time"></div>
+    <script>
+      function updateCurrentTime() {
+        const currentTimeElement = document.getElementById("current-time");
+        const currentDate = new Date();
+
+        // 날짜와 시간 포맷 설정
+        const options = {
+          weekday: "short",
+          month: "short",
+          day: "2-digit",
+          year: "numeric",
+          hour: "numeric",
+          minute: "numeric",
+          second: "numeric",
+          timeZoneName: "short",
+        };
+
+        // 현재 시간 문자열 생성 및 변환
+        const currentTimeString = currentDate
+          .toLocaleString("en-US", options)
+          .replace(",", ""); // 콤마 제거
+
+        // 화면에 표시
+        currentTimeElement.innerHTML = `현재시간: ${currentTimeString}`;
+
+        // 1초마다 업데이트
+        setTimeout(updateCurrentTime, 1000);
+      }
+
+      // 초기 실행
+      updateCurrentTime();
+    </script>
+  </body>
+</html>

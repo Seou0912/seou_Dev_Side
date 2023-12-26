@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>구구단</title>
+    <style>
+      body {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+      .box {
+        display: inline-block;
+        border: 4px double black;
+        padding: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      function printMultiplicationTable() {
+        var output = "";
+        for (var dan = 2; dan <= 9; dan++) {
+          output += "<div class='box'>";
+          output += "<h3>=== " + dan + "단 ===</h3>";
+          for (var num = 1; num <= 9; num++) {
+            var result = dan * num;
+            output += "<p>" + dan + " x " + num + " = " + result + "</p>";
+          }
+          output += "</div>";
+        }
+        document.body.innerHTML = output;
+      }
+
+      printMultiplicationTable();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>스톱워치</title>
+    <style>
+      body {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+      .container {
+        text-align: center;
+        margin-top: 100px;
+      }
+      .button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      #timer {
+        font-size: 18px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <button class="button" id="startButton">Start</button>
+      <button class="button" id="stopButton">Stop</button>
+    </div>
+    <p>경과시간:</p>
+    <div id="timer"></div>
+
+    <script>
+      let stopwatch = {
+        startTime: null,
+        running: false,
+        elapsedTime: 0,
+
+        start() {
+          if (!this.running) {
+            this.startTime = new Date();
+            this.running = true;
+            console.log("Stopwatch started.");
+            this.updateTimer();
+          }
+        },
+
+        stop() {
+          if (this.running) {
+            let endTime = new Date();
+            let elapsedMilliseconds = endTime - this.startTime;
+            this.elapsedTime += elapsedMilliseconds;
+            this.running = false;
+            console.log("Stopwatch stopped.");
+          }
+        },
+
+        updateTimer() {
+          let timerElement = document.getElementById("timer");
+          setInterval(() => {
+            if (this.running) {
+              let currentTime = new Date();
+              let totalElapsedMilliseconds =
+                this.elapsedTime + (currentTime - this.startTime);
+              let milliseconds = Math.floor(
+                (totalElapsedMilliseconds % 1000) / 10
+              );
+              let seconds = Math.floor((totalElapsedMilliseconds / 1000) % 60);
+              let minutes = Math.floor(
+                (totalElapsedMilliseconds / (1000 * 60)) % 60
+              );
+              let hours = Math.floor(
+                (totalElapsedMilliseconds / (1000 * 60 * 60)) % 24
+              );
+
+              let timeString = `${hours.toString().padStart(2, "0")}:${minutes
+                .toString()
+                .padStart(2, "0")}:${seconds
+                .toString()
+                .padStart(2, "0")}.${milliseconds.toString().padStart(2, "0")}`;
+              timerElement.textContent = timeString;
+            }
+          }, 10);
+        },
+      };
+
+      let startButton = document.getElementById("startButton");
+      let stopButton = document.getElementById("stopButton");
+
+      startButton.addEventListener("click", stopwatch.start.bind(stopwatch));
+      stopButton.addEventListener("click", stopwatch.stop.bind(stopwatch));
+    </script>
+  </body>
+</html>
