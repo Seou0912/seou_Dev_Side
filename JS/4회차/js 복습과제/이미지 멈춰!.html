@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이미지 멈춰!</title>
+    <style>
+      body {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+
+      .slideshow {
+        width: 300px;
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 20px;
+        transition: background-image 0.5s ease;
+      }
+    </style>
+    <script>
+      var images = ["1.jpg", "2.jpg", "3.jpg"];
+      var currentIndex = 0;
+      var intervalId;
+      var isPaused = false;
+
+      function stopSlideshow() {
+        clearInterval(intervalId);
+        isPaused = true;
+      }
+
+      function changeImage() {
+        if (!isPaused) {
+          var slideshow = document.getElementById("slideshow");
+          slideshow.style.backgroundImage = "url(" + images[currentIndex] + ")";
+          currentIndex = (currentIndex + 1) % images.length;
+        }
+      }
+      setInterval(changeImage, 100);
+    </script>
+  </head>
+  <body>
+    <h1>이미지 슬라이드쇼</h1>
+
+    <div id="slideshow" class="slideshow"></div>
+
+    <button onclick="stopSlideshow()">멈춰!</button>
+    <button onclick="startSlideshow()">다시 시작</button>
+  </body>
+</html>
