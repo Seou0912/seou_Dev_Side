@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>객체를 만드는 생성자</title>
+    <style>
+      body {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      // 함수인데 객채를 생성할 목적으로 정의 하는 함수, 설계도 개념
+      // 자바스크립트에서 기본으로 제공하지않는 데이터 유형을 직접 만들 수 있다.
+
+      function BestSinger() {
+        this.name = "VOS";
+        this.member = "박지헌, 최현준, 김경록";
+        this.singing = function () {
+          console.log("니 이름 불렀나 봐~ 나 술에 취해서~");
+        };
+      }
+      const cos = new BestSinger();
+      console.log(vos.name);
+      console.log(vos.member);
+      cos1.singing();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>매개변수</title>
+    <style>
+      body {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      function Singer(name, memner) {
+        this.name = name;
+        this, (member = memner);
+      }
+      const noel = new Singer("노을", "강균성, 전우성, 이상곤, 나성호");
+
+      console.log(noel.name);
+      console.log(noel.memner);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배열</title>
+    <style>
+      body {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      const vos = ["박지현", "최현준", "김경록"];
+
+      for (let i = 0; i < 3; i += 1) {
+        console.log(vos[i]);
+      }
+      // push 배열에 요소 추가
+      vos.push("정서우");
+      console.log(vos);
+      // pop 배열에 끝부분 요소 제거
+      vos.pop();
+      console.log(vos);
+
+      // indexOf 주어진 요소의 유무를 인덱스 번호로 확인
+      console.log(vos.indexOf("최현준"));
+      console.log(vos.indexOf("정서우"));
+
+      // splice  정해진 요서만큼 요소 제거
+      //vos.splice(0,2)
+      //console.log(vos)
+
+      //splice 로 지운다운 대체가능
+      //vos.splice(0,1, "고망고", "고수아")
+      //console.log(vos)
+
+      // forEach()
+      vos.forEach(function (item) {
+        console.log("포이치에서 호출된 함수!" + item);
+      });
+    </script>
+  </body>
+</html>
